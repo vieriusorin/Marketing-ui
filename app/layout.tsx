@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "../lib/utils";
-import "./globals.css";
+import "./globals.scss";
 import Sidebar from "@/components/ui/sidebar";
 
 export const fontSans = FontSans({
@@ -27,11 +27,9 @@ export default function RootLayout({
 					fontSans.variable
 				)}
 			>
-				<div className='flex'>
+				<div className='grid grid-cols-[300px_1fr]'>
 					<Sidebar />
-					<main className='flex-1 m-5 p-5 rounded-sm bg-slate-100'>
-						{children}
-					</main>
+					<main className='m-5 p-5 rounded-sm bg-slate-100'>{children}</main>
 				</div>
 			</body>
 		</html>

@@ -1,14 +1,10 @@
 import Link from "next/link";
+import { headers } from "next/headers";
 import { BookUser, Home, ListTodo, Presentation, Receipt } from "lucide-react";
 
 export default function Sidebar() {
-	// const router = useRouter();
-	// const isCurrentPath = (path: string) => {
-	// 	return router.asPath === path || router.asPath.startsWith(path);
-	// };
-
 	return (
-		<aside className=' text-white w-1/5 p-4 h-screen'>
+		<aside className=' text-white p-4  sticky  h-screen self-start'>
 			<div className='flex items-center mb-8'>
 				<Link href='/'>
 					<span className='text-xl font-semibold text-center text-black block'>
@@ -20,7 +16,7 @@ export default function Sidebar() {
 				<ul className='flex flex-col items-start space-y-2'>
 					<li className='w-full'>
 						<Link
-							href='/dashboard/'
+							href='/dashboard'
 							className={`text-black flex items-center ${"p-3 bg-slate-100 rounded-sm"}`}
 						>
 							<Home size={20} strokeWidth={1} className='mr-2' />
@@ -60,7 +56,7 @@ export default function Sidebar() {
 							className='text-black flex items-center p-3'
 						>
 							<Receipt size={20} strokeWidth={1} className='mr-2' />
-							Invoice
+							Invoices
 						</Link>
 					</li>
 					<li className='w-full'>

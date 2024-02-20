@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.avatars {
+
+  *:not(:first-child) {
+    margin-left: -10px
+  }
+}
