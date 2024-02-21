@@ -3,6 +3,8 @@ import { Inter as FontSans } from "next/font/google";
 import { cn } from "../lib/utils";
 import "./globals.scss";
 import Sidebar from "@/components/ui/sidebar";
+import { Toaster } from "@/components/ui/toaster";
+import TanstackProvider from "@/providers/TanstackProvider";
 
 export const fontSans = FontSans({
 	subsets: ["latin"],
@@ -27,10 +29,13 @@ export default function RootLayout({
 					fontSans.variable
 				)}
 			>
-				<div className='grid grid-cols-[300px_1fr]'>
-					<Sidebar />
-					<main className='m-5 p-5 rounded-sm bg-slate-100'>{children}</main>
-				</div>
+				<TanstackProvider>
+					<div className='grid grid-cols-[300px_1fr]'>
+						<Sidebar />
+						<main className='m-5 p-5 rounded-xl bg-slate-100'>{children}</main>
+						<Toaster />
+					</div>
+				</TanstackProvider>
 			</body>
 		</html>
 	);

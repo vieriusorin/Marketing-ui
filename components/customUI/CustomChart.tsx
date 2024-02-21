@@ -23,13 +23,13 @@ export const CustomChart = ({ data }: any) => {
 				margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
 			>
 				<defs>
-					<linearGradient id='colorFE' x1='0' y1='0' x2='0' y2='1'>
-						<stop offset='5%' stopColor='#5526ff' stopOpacity={1} />
-						<stop offset='95%' stopColor='#5526ff' stopOpacity={0} />
+					<linearGradient id='colorDev' x1='1' y1='1' x2='2' y2='0'>
+						<stop offset='5%' stopColor='#24c4cf' stopOpacity={1} />
+						<stop offset='95%' stopColor='#24c4cf' stopOpacity={0} />
 					</linearGradient>
-					<linearGradient id='colorBE' x1='0' y1='0' x2='0' y2='1'>
-						<stop offset='0%' stopColor='#cffa6b' stopOpacity={1} />
-						<stop offset='95%' stopColor='#cffa6b' stopOpacity={0} />
+					<linearGradient id='colorDesign' x1='2' y1='0' x2='1' y2='3'>
+						<stop offset='0%' stopColor='#e9afa1' stopOpacity={1} />
+						<stop offset='95%' stopColor='#e9afa1' stopOpacity={0} />
 					</linearGradient>
 				</defs>
 				<XAxis dataKey='name' />
@@ -38,17 +38,17 @@ export const CustomChart = ({ data }: any) => {
 				<Tooltip />
 				<Area
 					type='natural'
-					dataKey='FE'
-					stroke='#8884d8'
+					dataKey='development'
+					stroke='#24c4cf'
 					fillOpacity={1}
-					fill='url(#colorFE)'
+					fill='url(#colorDev)'
 				/>
 				<Area
 					type='natural'
-					dataKey='BE'
-					stroke='#82ca9d'
+					dataKey='design'
+					stroke='#e9afa1'
 					fillOpacity={1}
-					fill='url(#colorBE)'
+					fill='url(#colorDesign)'
 				/>
 			</AreaChart>
 		</ResponsiveContainer>

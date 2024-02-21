@@ -1,29 +1,28 @@
-import { CardProject } from "@/components/customUI/cardProject";
-async function getData() {
-	const res = await fetch("http://localhost:3001/api/projects", {
-		cache: "no-store",
-	});
-	if (!res.ok) {
-		throw new Error("Failed to fetch data");
-	}
+import { Filters } from "@/components/customUI/filters";
+import { PaginationCustom } from "@/components/customUI/pagination";
+import ProjectList from "@/components/customUI/project/list";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-	return res.json();
-}
+import React from "react";
 
 export default async function ProjectsPage() {
-	const data = await getData();
-
-	const { projects } = data.data;
 	return (
-		<div>
-			<h2 className='text-2xl font-semibold'>Projects</h2>
-			<div className='grid lg:grid-cols-5 gap-4'>
-				{!!projects &&
-					projects.length > 0 &&
-					projects.map((project) => (
-						<CardProject key={project.id} project={project} />
-					))}
+		<div className='py-10 px-5'>
+			<div className='flex items-center justify-between mb-8'>
+				<h2 className='text-2xl font-semibold'>Projects</h2>
+				<div className='ml-auto mr-10'>
+					<Filters />
+				</div>
+				<Button
+					className='w-[120px] bg-black text-white hover:bg-black/[0.8] rounded-[8px]'
+					asChild
+				>
+					<Link href='/dashboard/projects/new'> Add new</Link>
+				</Button>
 			</div>
+
+			<ProjectList />
 		</div>
 	);
 }

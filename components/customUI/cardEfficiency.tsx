@@ -9,7 +9,7 @@ const users = [
 
 export const CardEfficiency = () => {
 	return (
-		<div className='bg-white p-4 rounded-lg'>
+		<div className='bg-white p-4 rounded-xl'>
 			<div className='flex items-center'>
 				<div>
 					<h3 className='text-lg font-medium leading-6 text-gray-900 mb-5'>

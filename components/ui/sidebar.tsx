@@ -17,7 +17,7 @@ export default function Sidebar() {
 					<li className='w-full'>
 						<Link
 							href='/dashboard'
-							className={`text-black flex items-center ${"p-3 bg-slate-100 rounded-sm"}`}
+							className={`text-black flex items-center ${"p-3 bg-slate-100 rounded-[8px]"}`}
 						>
 							<Home size={20} strokeWidth={1} className='mr-2' />
 							Home
